@@ -34,6 +34,11 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(calculateDaysSince([{ startDate }])).toEqual([daysSince]);
         expect(calculateDaysSince([{ startDate: "Invalid Date" }])).toEqual([NaN]);
     });
+
+    test('filterRecentDates', () => {
+        expect(filterRecentDates("Hello")).toEqual("Input is not an array!")
+        expect(filterRecentDates(["2023-01-01", "2024-05-01", "2024-11-15", "2024-10-31"])).toEqual(["2024-11-15", "2024-10-31"]);
+    })
 });
 
 
