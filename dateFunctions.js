@@ -61,6 +61,19 @@ function getMonthNames(datesArray) {
 // Challenge 4: Sort Dates in Ascending Order
 // Given an array of `Date` objects, return a new array sorted in ascending order.
 // Use `sort` method to arrange dates by time.
+function sortDatesAscending(datesArray) {
+    if (!Array.isArray(datesArray)) {
+        return "Input is not an array!"
+    }
+
+    let dateObjects = datesArray.map((dateString) => {
+        let date = new Date(dateString);
+        return date;
+    });
+
+    dateObjects = dateObjects.sort((a, b) => a - b);
+    return dateObjects.map((date) => date.toISOString().slice(0, -14));
+}
 
 
 // Challenge 5: Calculate Age
@@ -126,7 +139,7 @@ module.exports = {
     calculateDaysSince,
     filterRecentDates,
     getMonthNames,
-    // sortDatesAscending,
+    sortDatesAscending,
     // calculateAges,
     // groupDatesByYear,
     // findFirstMonday,

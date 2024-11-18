@@ -41,8 +41,13 @@ describe('JavaScript Date Coding Challenges', () => {
     });
 
     test('getMonthNames', () => {
-        expect(getMonthNames("Hello")).toEqual("Input is not an ar")
+        expect(getMonthNames("Hello")).toEqual("Input is not an array!");
         expect(getMonthNames(["2023-01-04", "2024-05-10", "2024-11-15", "2024-10-31"])).toEqual(["January", "May", "November", "October"]);
+    });
+
+    test('sortDatesAscending', () => {
+        expect(sortDatesAscending("Hello")).toEqual("Input is not an array!");
+        expect(sortDatesAscending(["2023-01-04", "2024-05-10", "2024-11-15", "2024-10-31"])).toEqual(["2023-01-04", "2024-05-10", "2024-10-31", "2024-11-15"]);
     });
 });
 
