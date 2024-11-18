@@ -49,6 +49,11 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(sortDatesAscending("Hello")).toEqual("Input is not an array!");
         expect(sortDatesAscending(["2023-01-04", "2024-05-10", "2024-11-15", "2024-10-31"])).toEqual(["2023-01-04", "2024-05-10", "2024-10-31", "2024-11-15"]);
     });
+
+    test('calculateAges', () => {
+        expect(calculateAges("Hello")).toEqual("Input is not an array!");
+        expect(calculateAges(["2001-01-04", "1994-05-10", "1985-11-15", "1975-10-31"])).toEqual([23, 30, 39, 49]);
+    });
 });
 
 
