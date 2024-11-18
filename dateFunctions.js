@@ -10,8 +10,8 @@ function calculateDaysSince(datesArray) {
             const currentDate = new Date();
 
             if (startDate == false) {
-                return NaN;
-            } 
+                return NaN }
+            
             let difference = currentDate - startDate;
             let daysSince = Math.floor(difference / (1000 * 60 * 60 * 24));
             return daysSince
@@ -80,7 +80,31 @@ function sortDatesAscending(datesArray) {
 // Given an array of birthdates as strings (e.g., "2000-05-10"), return an array of ages.
 // Use `getFullYear` and `getMonth` to compare current date with birthdate, accounting for past birthdays.
 
+function calculateAges(datesArray) {
+    if (!Array.isArray(datesArray)) {
+        return "Input is not an array!"
+    }
 
+    return datesArray.map((element) => {
+        const birthday = new Date(element);
+        const currentDate = new Date();
+
+        const birthYear = birthday.getFullYear();
+        const birthMonth = birthday.getMonth();
+
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth();
+
+        let age = currentYear - birthYear;
+        if (currentMonth < birthMonth) {
+            age -= 1;
+        }
+        return age;
+    })
+}
+
+// const datesArray = ["2001-01-04", "1994-05-10", "1985-11-15", "1975-10-31"]
+// console.log(calculateAges(datesArray));
 
 // Challenge 6: Group Dates by Year
 // Given an array of `Date` objects, return an object where each year is a key, and the value is an array of dates from that year.
@@ -140,7 +164,7 @@ module.exports = {
     filterRecentDates,
     getMonthNames,
     sortDatesAscending,
-    // calculateAges,
+    calculateAges,
     // groupDatesByYear,
     // findFirstMonday,
     // checkLeapYears,
