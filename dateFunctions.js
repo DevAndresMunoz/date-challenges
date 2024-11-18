@@ -44,9 +44,19 @@ function filterRecentDates(datesArray) {
 // Given an array of `Date` objects, return an array of month names for each date.
 // Use `getMonth` method to get the month index and map it to a month name array.
 function getMonthNames(datesArray) {
+    if (!Array.isArray(datesArray)) {
+        return "Input is not an array!"
+    }
+    
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     
+    return datesArray.map((dateString) => {
+        const date = new Date(dateString);
+        const monthIndex = date.getMonth();
+        return monthNames[monthIndex];
+    });
 }
+
 
 // Challenge 4: Sort Dates in Ascending Order
 // Given an array of `Date` objects, return a new array sorted in ascending order.
@@ -115,7 +125,7 @@ function getDayOfWeekForDates(datesArray) {
 module.exports = {
     calculateDaysSince,
     filterRecentDates,
-    // getMonthNames,
+    getMonthNames,
     // sortDatesAscending,
     // calculateAges,
     // groupDatesByYear,
