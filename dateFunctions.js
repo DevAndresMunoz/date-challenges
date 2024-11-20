@@ -96,7 +96,7 @@ function calculateAges(datesArray) {
         const currentMonth = currentDate.getMonth();
 
         let age = currentYear - birthYear;
-        if (currentMonth < birthMonth) {
+        if (birthMonth > currentMonth) {
             age -= 1;
         }
         return age;
@@ -109,6 +109,22 @@ function calculateAges(datesArray) {
 // Challenge 6: Group Dates by Year
 // Given an array of `Date` objects, return an object where each year is a key, and the value is an array of dates from that year.
 // Use `reduce` to build an object with years as keys and `push` to add dates to the corresponding arrays.
+
+function groupDatesByYear(datesArray) {
+    if (!Array.isArray(datesArray)) {
+        return "Input is not an array!"
+    }
+
+    const newObject = datesArray.reduce((acc, date) => {
+        const year = date.getFullYear();
+        if (!acc[year]) {
+            acc[year] = [];
+        }
+        acc[year].push(date);
+        return acc;
+    }, {})
+    return newObject;
+}
 
 
 // Challenge 7: Find First Monday of Month
@@ -165,7 +181,7 @@ module.exports = {
     getMonthNames,
     sortDatesAscending,
     calculateAges,
-    // groupDatesByYear,
+    groupDatesByYear,
     // findFirstMonday,
     // checkLeapYears,
     // addDaysToDates,
