@@ -183,12 +183,26 @@ function checkLeapYears(datesArray) {
     }
     return leapYearArray
 }
-
 //I know this one was one of the easier ones, but I'm very happy that worked on the first try :)
+
 
 // Challenge 9: Add Days to Dates
 // Given an array of `Date` objects and a number of days, return a new array with each date incremented by the given number of days.
 // Use `setDate` to add days to each date.
+
+function addDaysToDates(datesArray, numDays) {
+    if (!Array.isArray(datesArray)) {
+        return "Input is not an array!"
+    }
+
+    return datesArray.map((date) => {
+        incrementedDate = date.getDate() + numDays;
+        finalDate = (date.setDate(incrementedDate));
+        parsedDate = new Date(finalDate);
+        return parsedDate;
+    })
+}
+
 
 
 // Challenge 10: Get Day of Week for Dates
@@ -233,7 +247,7 @@ module.exports = {
     groupDatesByYear,
     findFirstMonday,
     checkLeapYears,
-    // addDaysToDates,
+    addDaysToDates,
     // getDayOfWeekForDates,
     // findMostRecentDate,
     // getLastDayOfMonth,

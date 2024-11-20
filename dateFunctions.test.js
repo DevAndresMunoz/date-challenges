@@ -85,6 +85,28 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(checkLeapYears(testArray)).toEqual(expectedArray);
     });
 
+    test('addDaysToDates', () => {
+        const testArray = [
+            new Date('1999-05-10'),
+            new Date('2005-07-20'),
+            new Date('1999-02-12'),
+            new Date('1999-10-22'),
+            new Date('2005-03-10'),
+            new Date('2012-11-07')
+          ];
+        
+          const expectedArray = [
+            new Date('1999-05-15'),
+            new Date('2005-07-25'),
+            new Date('1999-02-17'),
+            new Date('1999-10-27'),
+            new Date('2005-03-15'),
+            new Date('2012-11-12')
+        ];
+        expect(addDaysToDates("Hello")).toEqual("Input is not an array!");
+        expect(addDaysToDates(testArray, 5)).toEqual(expectedArray);
+    })
+
     
 
     
