@@ -73,6 +73,13 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(groupDatesByYear(testArray)).toEqual(expectedObj);
     });
 
+    test('findFirstMonday', () => {
+        expect(findFirstMonday("Hello")).toEqual("Missing year or month!");
+        expect(findFirstMonday(1999, "April")).toEqual(5);
+    });
+
+    
+
 });
 
 
