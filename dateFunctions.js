@@ -292,6 +292,12 @@ function listDatesOfWeekdayInMonth(year, month, weekday) {
 // Given an object with properties containing date strings, return a new object with the difference in days for each date property relative to today.
 // Use `Object.entries`, `map`, and `Math.floor` to calculate days for each date.
 
+function getDateDifferences(object) {
+    const todayDate = new Date();
+    let outputObj = {};
+    
+}
+
 
 module.exports = {
     calculateDaysSince,
@@ -308,7 +314,7 @@ module.exports = {
     getLastDayOfMonth,
     calculateDuration,
     listDatesOfWeekdayInMonth,
-    // getDateDifferences
+    getDateDifferences
 }
 
 
