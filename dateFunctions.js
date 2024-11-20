@@ -222,6 +222,14 @@ function getDayOfWeekForDates(datesArray) {
 // Given an array of `Date` objects, return the most recent date.
 // Use `Math.max` to find the largest date in milliseconds, then convert back to a `Date`.
 
+function findMostRecentDate(datesArray) {
+    if (!Array.isArray(datesArray)) {
+        return "Input is not an array!"
+    }
+    const maxNum = Math.max(...datesArray);
+    const mostRecent = (new Date(maxNum)).toDateString();
+    return mostRecent;
+}
 
 // Challenge 12: Get Last Day of Month
 // Given a year and month, return the last day of the month.
@@ -254,7 +262,7 @@ module.exports = {
     checkLeapYears,
     addDaysToDates,
     getDayOfWeekForDates,
-    // findMostRecentDate,
+    findMostRecentDate,
     // getLastDayOfMonth,
     // calculateDuration,
     // listDatesOfWeekdayInMonth,

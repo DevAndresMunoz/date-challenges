@@ -130,6 +130,20 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(getDayOfWeekForDates(testArray)).toEqual(expectedArray);
     })
 
+    test('findMostRecentDate', () => {
+        const testArray = [
+            new Date('1999-05-10'),
+            new Date('2005-07-20'),
+            new Date('1999-02-12'),
+            new Date('1999-10-22'),
+            new Date('2005-03-10'),
+            new Date('2012-11-07')
+          ];
+
+        expect(findMostRecentDate("Hello)")).toEqual("Input is not an array!");
+        expect(findMostRecentDate(testArray)).toEqual("Tue Nov 06 2012");
+    })
+
     
 
     
