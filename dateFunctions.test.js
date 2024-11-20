@@ -78,6 +78,15 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(findFirstMonday(1999, "April")).toEqual(5);
     });
 
+    test('checkLeapYears', () => {
+        const testArray = [1978, 1993, 2008, 2000, 1776, 2007, 2024]
+        const expectedArray = [false, false, true, true, true, false, true]
+        expect(checkLeapYears("Hello")).toEqual("Input is not an array!");
+        expect(checkLeapYears(testArray)).toEqual(expectedArray);
+    });
+
+    
+
     
 
 });
