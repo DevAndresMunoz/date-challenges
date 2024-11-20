@@ -160,6 +160,11 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(listDatesOfWeekdayInMonth("Hello)")).toEqual("Input is not an integer!");
         expect(listDatesOfWeekdayInMonth(2023, 8, 5)).toEqual(expectedArray);
     })
+
+    test('getDateDifferences', () => {
+        expect(getDateDifferences("Hello)")).toEqual("Input is not an integer!");
+        expect(getDateDifferences(2023, 8, 5)).toEqual(expectedArray);
+    })
     
 
 });
