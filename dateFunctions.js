@@ -265,12 +265,28 @@ function calculateDuration(date1, date2) {
     return(`Between these two dates lie ${diffDays} days, ${diffHours} hours, and ${diffMinutes} minutes.`)
 }
 
-
-
 // Challenge 14: List Dates of Specific Weekday in a Month
 // Given a year, a month, and a weekday, return an array of all dates that fall on that weekday in that month.
 // Use a loop with `getDay` to check each date until the end of the month.
 
+function listDatesOfWeekdayInMonth(year, month, weekday) {
+    if (isNaN(year) || isNaN(month) || isNaN(weekday)) {
+        return 'Input is not an integer!';
+    }
+
+    let testDate = new Date(year, month, 1);
+    let daysInMonth = (new Date(year, month, 0)).getDate();
+    let arr = [];
+
+    for (i = 0; i < daysInMonth; i++) {
+        dayToTest = testDate.getDay();
+        if (dayToTest == weekday) {
+            arr.push((testDate).toDateString());
+        }
+        testDate.setDate(i + 1);
+    }
+    return arr;
+}
 
 // Challenge 15: Get Date Differences for Object Properties
 // Given an object with properties containing date strings, return a new object with the difference in days for each date property relative to today.
@@ -291,7 +307,7 @@ module.exports = {
     findMostRecentDate,
     getLastDayOfMonth,
     calculateDuration,
-    // listDatesOfWeekdayInMonth,
+    listDatesOfWeekdayInMonth,
     // getDateDifferences
 }
 
