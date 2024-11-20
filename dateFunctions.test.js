@@ -107,6 +107,29 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(addDaysToDates(testArray, 5)).toEqual(expectedArray);
     })
 
+    test('getDayOfWeekForDates', () => {
+        const testArray = [
+            new Date('1999-05-10'),
+            new Date('2005-07-20'),
+            new Date('1999-02-12'),
+            new Date('1999-10-22'),
+            new Date('2005-03-10'),
+            new Date('2012-11-07')
+          ];
+
+          const expectedArray = [
+            "Monday",
+            "Wednesday",
+            "Friday",
+            "Friday",
+            "Thursday",
+            "Wednesday"
+        ]
+
+        expect(getDayOfWeekForDates("Hello)")).toEqual("Input is not an array!");
+        expect(getDayOfWeekForDates(testArray)).toEqual(expectedArray);
+    })
+
     
 
     

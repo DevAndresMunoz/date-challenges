@@ -203,14 +203,19 @@ function addDaysToDates(datesArray, numDays) {
     })
 }
 
-
-
 // Challenge 10: Get Day of Week for Dates
 // Given an array of `Date` objects, return an array of the day of the week for each date.
 // Use `getDay` and map each day index to a day name array.
 function getDayOfWeekForDates(datesArray) {
+    if (!Array.isArray(datesArray)) {
+        return "Input is not an array!"
+    }
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-   
+
+    return datesArray.map((date) => {
+        weekDay = daysOfWeek[date.getDay() + 1];
+        return weekDay;
+    })
 }
 
 // Challenge 11: Find Most Recent Date
@@ -248,7 +253,7 @@ module.exports = {
     findFirstMonday,
     checkLeapYears,
     addDaysToDates,
-    // getDayOfWeekForDates,
+    getDayOfWeekForDates,
     // findMostRecentDate,
     // getLastDayOfMonth,
     // calculateDuration,
