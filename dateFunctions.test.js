@@ -149,6 +149,11 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(getLastDayOfMonth(2023, 8)).toEqual("Sat Sep 30 2023");
     })
 
+    test('calculateDuration', () => {
+        expect(calculateDuration("Hello)")).toEqual("Input is not an integer!");
+        expect(calculateDuration('1999-05-10','2005-07-20')).toEqual("Between these two dates lie 2263 days, 54312 hours, and 3258720 minutes.");
+    })
+
     
 
 });
