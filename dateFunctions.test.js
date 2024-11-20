@@ -154,6 +154,12 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(calculateDuration('1999-05-10','2005-07-20')).toEqual("Between these two dates lie 2263 days, 54312 hours, and 3258720 minutes.");
     })
 
+    test('listDatesOfWeekdayInMonth', () => {
+        const expectedArray = ['Fri Sep 01 2023', 'Fri Sep 01 2023', 'Fri Sep 08 2023', 'Fri Sep 15 2023', 'Fri Sep 22 2023', 'Fri Sep 29 2023'];
+
+        expect(listDatesOfWeekdayInMonth("Hello)")).toEqual("Input is not an integer!");
+        expect(listDatesOfWeekdayInMonth(2023, 8, 5)).toEqual(expectedArray);
+    })
     
 
 });
