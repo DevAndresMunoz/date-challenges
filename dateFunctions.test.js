@@ -54,6 +54,25 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(calculateAges("Hello")).toEqual("Input is not an array!");
         expect(calculateAges(["2001-01-04", "1994-05-10", "1985-11-15", "1975-10-31"])).toEqual([23, 30, 39, 49]);
     });
+
+    test('groupDatesByYear', () => {
+        const testArray = [
+            new Date('1999-05-10'),
+            new Date('2005-07-20'),
+            new Date('1999-02-12'),
+            new Date('1999-10-22'),
+            new Date('2005-03-10'),
+            new Date('2012-11-07')
+          ];
+        const expectedObj = {
+            1999: [(new Date("1999-05-10")), (new Date("1999-02-12")), (new Date("1999-10-22"))],
+            2005: [(new Date("2005-07-20")), (new Date("2005-03-10"))],
+            2012: [new Date("2012-11-07")]
+        }
+        expect(groupDatesByYear("Hello")).toEqual("Input is not an array!");
+        expect(groupDatesByYear(testArray)).toEqual(expectedObj);
+    });
+
 });
 
 
