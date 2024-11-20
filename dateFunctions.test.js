@@ -144,7 +144,10 @@ describe('JavaScript Date Coding Challenges', () => {
         expect(findMostRecentDate(testArray)).toEqual("Tue Nov 06 2012");
     })
 
-    
+    test('getLastDayOfMonth', () => {
+        expect(getLastDayOfMonth("Hello)")).toEqual("Input is not an integer!");
+        expect(getLastDayOfMonth(2023, 8)).toEqual("Sat Sep 30 2023");
+    })
 
     
 
